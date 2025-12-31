@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vibrant Chat UI</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .chat-container {
+        width: 380px;
+        height: 560px;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    /* Header */
+    .chat-header {
+        background: linear-gradient(90deg, #ff6a00, #ee0979);
+        padding: 15px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .chat-header img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid white;
+    }
+
+    .chat-header h3 {
+        font-size: 18px;
+    }
+
+    .chat-header span {
+        font-size: 12px;
+        opacity: 0.8;
+    }
+
+    /* Chat Body */
+    .chat-body {
+        flex: 1;
+        padding: 15px;
+        background: #f5f7ff;
+        overflow-y: auto;
+    }
+
+    .message {
+        max-width: 75%;
+        padding: 10px 14px;
+        margin-bottom: 12px;
+        border-radius: 15px;
+        font-size: 14px;
+        line-height: 1.4;
+        animation: fadeIn 0.4s ease;
+    }
+
+    .received {
+        background: #e0e7ff;
+        color: #333;
+        border-top-left-radius: 0;
+    }
+
+    .sent {
+        background: linear-gradient(135deg, #ff6a00, #ee0979);
+        color: white;
+        margin-left: auto;
+        border-top-right-radius: 0;
+    }
+
+    /* Chat Footer */
+    .chat-footer {
+        display: flex;
+        padding: 12px;
+        background: #fff;
+        border-top: 1px solid #ddd;
+    }
+
+    .chat-footer input {
+        flex: 1;
+        padding: 10px 14px;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        outline: none;
+        font-size: 14px;
+    }
+
+    .chat-footer button {
+        margin-left: 10px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border: none;
+        padding: 10px 16px;
+        border-radius: 50%;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        transition: transform 0.2s;
+    }
+
+    .chat-footer button:hover {
+        transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">
+        <img src="https://i.pravatar.cc/150?img=32" alt="User">
+        <div>
+            <h3>Harine</h3>
+            <span>Online</span>
+        </div>
+    </div>
+
+    <div class="chat-body">
+        <div class="message received">
+            Hey! 👋 What's upp?
+        </div>
+        <div class="message sent">
+            Pretty good! Working on some stuffs.. 😄
+        </div>
+        <div class="message received">
+            That sounds awesome!  ✨
+        </div>
+    </div>
+
+    <div class="chat-footer">
+        <input type="text" placeholder="Type a message...">
+        <button>➤</button>
+    </div>
+</div>
+
+</body>
+</html>
